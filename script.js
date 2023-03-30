@@ -6,6 +6,10 @@ const results = document.querySelector('.results')
 const playerScoreSpan = document.querySelector('.player-score')
 const computerScoreSpan = document.querySelector('.computer-score')
 const p = document.createElement('p')
+const options = document.querySelectorAll('.options')
+
+
+
 
 let playerScore = 0;
 let computerScore = 0;
@@ -43,17 +47,32 @@ function playRound(playerSelection, computerSelection) {
 const checkWinner = (playerScore,computerScore) => {
   if ( playerScore === 5 ) {
     results.removeChild(p)
+    options.forEach(button => {
+      button.disabled = true;
+    });
+      
     const h2 = document.createElement('h2')
     h2.classList.add('player-won')
-    h2.innerText = `You won ${playerScore} to ${computerScore} great job beating the comoputer!`
+    h2.innerText = `You won ${playerScore} to ${computerScore} great job beating the computer!`
     results.append(h2)
+    const resetBtn = document.createElement('button')
+    resetBtn.textContent = 'Play Again?'
+    results.append(resetBtn)
+    resetBtn.addEventListener('click',() => location.reload());
   }
   if (computerScore === 5) {
     results.removeChild(p)
+    options.forEach(button => {
+      button.disabled = true;
+    });
     const h2 = document.createElement('h2')
     h2.classList.add('computer-won')
     h2.innerText = `You lost ${playerScore} to ${computerScore} better luck next time!`
     results.append(h2)
+    const resetBtn = document.createElement('button')
+    resetBtn.textContent = 'Play Again?'
+    results.append(resetBtn)
+    resetBtn.addEventListener('click',() => location.reload());
   }
 }
 
