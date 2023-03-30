@@ -5,7 +5,7 @@ const game = document.querySelector('.game')
 const results = document.querySelector('.results')
 const playerScoreSpan = document.querySelector('.player-score')
 const computerScoreSpan = document.querySelector('.computer-score')
-
+const p = document.createElement('p')
 
 let playerScore = 0;
 let computerScore = 0;
@@ -22,19 +22,19 @@ function playRound(playerSelection, computerSelection) {
 
   playerSelection = playerSelection.toLowerCase();
   if (playerSelection === computerSelection) {
-    const p = document.createElement('p')
+    
     p.innerText =  `It's a tie! Both picked ${playerSelection}`;
     results.appendChild(p)
   } else if (playerSelection === 'rock' && computerSelection === 'scissors' ||
              playerSelection === 'paper' && computerSelection === 'rock' ||
              playerSelection === 'scissors' && computerSelection === 'paper') {
     playerScore++
-    const p = document.createElement('p')
+    
     p.innerText =  `You win! ${playerSelection} beats ${computerSelection}`;
     results.appendChild(p)
   } else {
     computerScore++
-    const p = document.createElement('p')
+    
     p.innerText = `You lose! ${computerSelection} beats ${playerSelection}`;
     results.appendChild(p)
   }
@@ -42,12 +42,14 @@ function playRound(playerSelection, computerSelection) {
 
 const checkWinner = (playerScore,computerScore) => {
   if ( playerScore === 5 ) {
+    results.removeChild(p)
     const h2 = document.createElement('h2')
     h2.classList.add('player-won')
     h2.innerText = `You won ${playerScore} to ${computerScore} great job beating the comoputer!`
     results.append(h2)
   }
   if (computerScore === 5) {
+    results.removeChild(p)
     const h2 = document.createElement('h2')
     h2.classList.add('computer-won')
     h2.innerText = `You lost ${playerScore} to ${computerScore} better luck next time!`
