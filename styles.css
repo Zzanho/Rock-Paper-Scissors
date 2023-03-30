@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika&display=swap');
+
+body {
+    font-family: 'Andika', sans-serif;
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    color: #f5f1f1;
+    display: flex;
+    flex-direction: column;
+        
+}
+
+.options {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  button img {
+    width: 100%;
+    height: auto;
+  }
+
+.running-score{
+    width: 100%;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.left {
+    float: left;
+  }
+  
+.right {
+    float: right;
+  }
+
+.header{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.game{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.options{
+    width:fit-content;
+    height:fit-content;
+    margin: 0;
+}
+
+.results {
+    text-align: center;
+    font-size:x-large;
+}
+
+#reset {
+    width: 200px;
+    height: 40px;
+    color: #f5f1f1;
+    border-radius: 25px;
+    border-color: #f5f1f1;
+    font-weight: bolder;
+    font-size: large;
+    background: none;
+}

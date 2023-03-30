@@ -56,6 +56,7 @@ const checkWinner = (playerScore,computerScore) => {
     h2.innerText = `You won ${playerScore} to ${computerScore} great job beating the computer!`
     results.append(h2)
     const resetBtn = document.createElement('button')
+    resetBtn.setAttribute('id', 'reset')
     resetBtn.textContent = 'Play Again?'
     results.append(resetBtn)
     resetBtn.addEventListener('click',() => location.reload());
@@ -70,6 +71,7 @@ const checkWinner = (playerScore,computerScore) => {
     h2.innerText = `You lost ${playerScore} to ${computerScore} better luck next time!`
     results.append(h2)
     const resetBtn = document.createElement('button')
+    resetBtn.setAttribute('id', 'reset')
     resetBtn.textContent = 'Play Again?'
     results.append(resetBtn)
     resetBtn.addEventListener('click',() => location.reload());
